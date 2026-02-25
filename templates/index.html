@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Link Scout — HTS Poly Micro-site Checker</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -188,6 +189,71 @@
       color: var(--text-muted);
     }
     #progress-bar-wrap progress { width: 100%; margin-top: .4rem; accent-color: var(--accent); }
+
+    /* ── Touch feedback ── */
+    @media (hover: none) {
+      .compare-btn:active { background: #2e2214; color: var(--accent-hover); }
+      #compare-all-btn:active { background: var(--accent-hover); }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 720px) {
+      header {
+        padding: .8rem 1rem;
+        flex-wrap: wrap;
+        gap: .6rem;
+      }
+      .header-left { flex: 1; min-width: 0; }
+      .header-logo { height: 1.6rem; flex-shrink: 0; }
+      header h1 { font-size: 1rem; }
+      header p {
+        font-size: .72rem;
+        /* Clamp to one line */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 55vw;
+      }
+      #compare-all-btn {
+        font-size: .82rem;
+        padding: .5rem 1rem;
+        min-height: 38px;
+      }
+
+      main {
+        margin: 1.25rem auto;
+        padding: 0 .75rem;
+        gap: 1.25rem;
+      }
+
+      .section-header {
+        font-size: .85rem;
+        padding: .6rem 1rem;
+      }
+
+      thead th { padding: .45rem .75rem; font-size: .68rem; }
+      td { padding: .5rem .75rem; font-size: .82rem; }
+
+      /* Hide the URL columns — content is in the detail panel */
+      thead th:nth-child(2),
+      thead th:nth-child(3),
+      tbody td:nth-child(2),
+      tbody td:nth-child(3) { display: none; }
+
+      /* Make compare button easier to tap */
+      .compare-btn { min-height: 36px; padding: .4rem .8rem; font-size: .78rem; }
+
+      .detail-panel { padding: .6rem .75rem .8rem; font-size: .81rem; }
+      .link-list li { flex-wrap: wrap; }
+    }
+
+    /* ── Very small phones ── */
+    @media (max-width: 400px) {
+      header p { display: none; }
+      td { padding: .45rem .6rem; font-size: .8rem; }
+      thead th { padding: .4rem .6rem; }
+      .badge { font-size: .7rem; padding: 2px 6px; }
+    }
   </style>
 </head>
 <body>
