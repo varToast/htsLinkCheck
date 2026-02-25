@@ -27,26 +27,26 @@ PRODUCTS = {
         {"name": "TX-UV",  "live": "https://htspoly.com/product/tx-uv",  "micro": "https://qr.htspoly.com/tx-uv"},
     ],
     "Densifiers & Sealers": [
-        {"name": "CD-HS",    "live": "https://htspoly.com/product/cd-hs",    "micro": "https://qr.htspoly.com/cd-hs"},
-        {"name": "CD-HSL",   "live": "https://htspoly.com/product/cd-hsl",   "micro": "https://qr.htspoly.com/cd-hsl"},
-        {"name": "CD-LS",    "live": "https://htspoly.com/product/cd-ls",    "micro": "https://qr.htspoly.com/cd-ls"},
-        {"name": "CD-SS",    "live": "https://htspoly.com/product/cd-ss",    "micro": "https://qr.htspoly.com/cd-ss"},
-        {"name": "CS-PS",    "live": "https://htspoly.com/product/cs-ps",    "micro": "https://qr.htspoly.com/cs-ps"},
-        {"name": "CS-PS SV", "live": "https://htspoly.com/product/cs-ps-sv", "micro": "https://qr.htspoly.com/cs-pssv"},
-        {"name": "CS-HG",    "live": "https://htspoly.com/product/cs-hg",    "micro": "https://qr.htspoly.com/cs-hg"},
-        {"name": "CS-AC30",  "live": "https://htspoly.com/product/cs-ac30",  "micro": "https://qr.htspoly.com/cs-ac30"},
+        {"name": "CD-HS",    "subsection": "Densifiers", "live": "https://htspoly.com/product/cd-hs",    "micro": "https://qr.htspoly.com/cd-hs"},
+        {"name": "CD-HSL",   "subsection": "Densifiers", "live": "https://htspoly.com/product/cd-hsl",   "micro": "https://qr.htspoly.com/cd-hsl"},
+        {"name": "CD-LS",    "subsection": "Densifiers", "live": "https://htspoly.com/product/cd-ls",    "micro": "https://qr.htspoly.com/cd-ls"},
+        {"name": "CD-SS",    "subsection": "Densifiers", "live": "https://htspoly.com/product/cd-ss",    "micro": "https://qr.htspoly.com/cd-ss"},
+        {"name": "CS-PS",    "subsection": "Sealers",    "live": "https://htspoly.com/product/cs-ps",    "micro": "https://qr.htspoly.com/cs-ps"},
+        {"name": "CS-PS SV", "subsection": "Sealers",    "live": "https://htspoly.com/product/cs-ps-sv", "micro": "https://qr.htspoly.com/cs-pssv"},
+        {"name": "CS-HG",    "subsection": "Sealers",    "live": "https://htspoly.com/product/cs-hg",    "micro": "https://qr.htspoly.com/cs-hg"},
+        {"name": "CS-AC30",  "subsection": "Sealers",    "live": "https://htspoly.com/product/cs-ac30",  "micro": "https://qr.htspoly.com/cs-ac30"},
     ],
     "Floor Coatings": [
-        {"name": "EPX-60 WB",  "live": "https://htspoly.com/product/epx-60wb",  "micro": "https://qr.htspoly.com/epx-60wb"},
-        {"name": "EPX-100",    "live": "https://htspoly.com/product/epx-100",    "micro": "https://qr.htspoly.com/epx-100"},
-        {"name": "EPX-100 HV", "live": "https://htspoly.com/product/epx-100hv", "micro": "https://qr.htspoly.com/epx-100hv"},
-        {"name": "PMR-60 WB",  "live": "https://htspoly.com/product/pmr-60wb",  "micro": "https://qr.htspoly.com/pmr-60wb"},
-        {"name": "PMR-100",    "live": "https://htspoly.com/product/pmr-100",    "micro": "https://qr.htspoly.com/pmr-100"},
-        {"name": "PAS-100",    "live": "https://htspoly.com/product/pas-100",    "micro": "https://qr.htspoly.com/pas-100"},
-        {"name": "PAS-200",    "live": "https://htspoly.com/product/pas-200",    "micro": "https://qr.htspoly.com/pas-200"},
-        {"name": "MCU-ST",     "live": "https://htspoly.com/product/mcu-st",     "micro": "https://qr.htspoly.com/mcu-st"},
-        {"name": "MCU-MT",     "live": "https://htspoly.com/product/mcu-mt",     "micro": "https://qr.htspoly.com/mcu-mt"},
-        {"name": "MCU-HG",     "live": "https://htspoly.com/product/mcu-hg",     "micro": "https://qr.htspoly.com/mcu-hg"},
+        {"name": "EPX-60 WB",  "subsection": "Epoxy",        "live": "https://htspoly.com/product/epx-60wb",  "micro": "https://qr.htspoly.com/epx-60wb"},
+        {"name": "EPX-100",    "subsection": "Epoxy",        "live": "https://htspoly.com/product/epx-100",    "micro": "https://qr.htspoly.com/epx-100"},
+        {"name": "EPX-100 HV", "subsection": "Epoxy",        "live": "https://htspoly.com/product/epx-100hv", "micro": "https://qr.htspoly.com/epx-100hv"},
+        {"name": "PMR-60 WB",  "subsection": "Epoxy",        "live": "https://htspoly.com/product/pmr-60wb",  "micro": "https://qr.htspoly.com/pmr-60wb"},
+        {"name": "PMR-100",    "subsection": "Epoxy",        "live": "https://htspoly.com/product/pmr-100",    "micro": "https://qr.htspoly.com/pmr-100"},
+        {"name": "PAS-100",    "subsection": "Polyaspartic", "live": "https://htspoly.com/product/pas-100",    "micro": "https://qr.htspoly.com/pas-100"},
+        {"name": "PAS-200",    "subsection": "Polyaspartic", "live": "https://htspoly.com/product/pas-200",    "micro": "https://qr.htspoly.com/pas-200"},
+        {"name": "MCU-ST",     "subsection": "Urethane",     "live": "https://htspoly.com/product/mcu-st",     "micro": "https://qr.htspoly.com/mcu-st"},
+        {"name": "MCU-MT",     "subsection": "Urethane",     "live": "https://htspoly.com/product/mcu-mt",     "micro": "https://qr.htspoly.com/mcu-mt"},
+        {"name": "MCU-HG",     "subsection": "Urethane",     "live": "https://htspoly.com/product/mcu-hg",     "micro": "https://qr.htspoly.com/mcu-hg"},
     ],
 }
 
@@ -59,8 +59,34 @@ def normalize_href(href: str) -> str:
     return unquote(href).lower().rstrip("/")
 
 
+IGNORE_HREFS = {
+    "https://htspoly.com/assets/hts-credit-application.pdf",
+}
+
+
 def is_doc_link(href: str) -> bool:
     return bool(DOC_PATTERN.search(urlparse(href).path))
+
+
+def find_link_title(tag) -> str:
+    """Walk up the DOM from a link tag to find a nearby label/heading."""
+    node = tag
+    for _ in range(5):
+        parent = node.parent
+        if parent is None:
+            break
+        for sib in node.previous_siblings:
+            # Skip other <a> tags — they're sibling links, not titles
+            if getattr(sib, "name", None) == "a":
+                continue
+            if hasattr(sib, "get_text"):
+                text = sib.get_text(strip=True)
+            else:
+                text = str(sib).strip()
+            if text and len(text) > 2:
+                return text.splitlines()[0].strip()
+        node = parent
+    return ""
 
 
 def fetch_doc_links(url: str) -> dict:
@@ -76,9 +102,10 @@ def fetch_doc_links(url: str) -> dict:
             absolute = urljoin(url, href)
             parsed = urlparse(absolute)
             if parsed.scheme in ("http", "https") and is_doc_link(absolute):
-                if absolute not in seen:
+                if absolute not in seen and normalize_href(absolute) not in {normalize_href(h) for h in IGNORE_HREFS}:
                     seen.add(absolute)
                     links.append({
+                        "title": find_link_title(tag),
                         "text": tag.get_text(strip=True) or "(no text)",
                         "href": absolute,
                     })
@@ -110,7 +137,7 @@ def compare_product(product: dict) -> dict:
         status = "error"
     elif not live_keys:
         status = "no_docs"
-    elif missing_keys or extra_keys:
+    elif missing_keys:
         status = "mismatch"
     else:
         status = "ok"
@@ -164,4 +191,4 @@ def compare_all():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5001)

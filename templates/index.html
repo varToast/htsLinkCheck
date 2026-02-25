@@ -7,58 +7,80 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:           #10100e;
+      --bg-card:      #181815;
+      --bg-row-alt:   #141412;
+      --bg-thead:     #1d1d19;
+      --border:       #2c2c26;
+      --border-light: #222220;
+      --text:         #d8d5ce;
+      --text-muted:   #8fa898;
+      --text-dim:     #50504a;
+      --accent:       #7ecbba;
+      --accent-hover: #9ddece;
+      --header-bg:    #0a0a09;
+      --section-bg:   #1d1d19;
+      --link:         #7ecbba;
+    }
+
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      background: #f0f2f5;
-      color: #1a1a1a;
+      background: var(--bg);
+      color: var(--text);
       padding: 0 0 4rem;
     }
 
     /* ── Top bar ── */
     header {
-      background: #1e3a5f;
-      color: #fff;
+      background: var(--header-bg);
+      color: var(--text);
       padding: 1.1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      border-bottom: 1px solid var(--border);
     }
     header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: .02em; }
-    header p  { font-size: 0.82rem; color: #93c5fd; }
+    header p  { font-size: 0.82rem; color: var(--text-muted); }
+    .header-logo { height: 2rem; width: auto; display: block; }
+    .header-left { display: flex; align-items: center; gap: 1rem; }
 
     #compare-all-btn {
-      background: #2563eb;
-      color: #fff;
+      background: var(--accent);
+      color: #120d06;
       border: none;
       padding: .55rem 1.2rem;
       border-radius: 6px;
       font-size: .9rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       white-space: nowrap;
       flex-shrink: 0;
     }
-    #compare-all-btn:hover { background: #1d4ed8; }
-    #compare-all-btn:disabled { opacity: .55; cursor: default; }
+    #compare-all-btn:hover { background: var(--accent-hover); }
+    #compare-all-btn:disabled { opacity: .45; cursor: default; }
 
     /* ── Layout ── */
     main { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
 
     /* ── Section card ── */
     .section-card {
-      background: #fff;
+      background: var(--bg-card);
       border-radius: 10px;
-      border: 1px solid #dde1e7;
+      border: 1px solid var(--border);
       overflow: hidden;
     }
     .section-header {
-      background: #1e3a5f;
-      color: #fff;
+      background: var(--section-bg);
+      color: var(--accent);
       padding: .7rem 1.25rem;
       font-size: 1rem;
       font-weight: 700;
-      letter-spacing: .02em;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
     }
 
     /* ── Product table ── */
@@ -70,16 +92,16 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .05em;
-      color: #64748b;
-      background: #f8fafc;
-      border-bottom: 1px solid #e2e8f0;
+      color: var(--text-dim);
+      background: var(--bg-thead);
+      border-bottom: 1px solid var(--border);
     }
-    tbody tr { border-bottom: 1px solid #f1f5f9; }
+    tbody tr { border-bottom: 1px solid var(--border-light); }
     tbody tr:last-child { border-bottom: none; }
-    tbody tr.result-row { background: #f8fafc; border-top: none; }
+    tbody tr.result-row { background: var(--bg-row-alt); border-top: none; }
     td { padding: .55rem 1rem; vertical-align: middle; font-size: .875rem; }
-    td a { color: #2563eb; text-decoration: none; word-break: break-all; }
-    td a:hover { text-decoration: underline; }
+    td a { color: var(--link); text-decoration: none; word-break: break-all; }
+    td a:hover { text-decoration: underline; color: var(--accent-hover); }
 
     /* ── Status badges ── */
     .badge {
@@ -92,18 +114,18 @@
       font-weight: 700;
       white-space: nowrap;
     }
-    .badge-pending  { background: #f1f5f9; color: #64748b; }
-    .badge-ok       { background: #dcfce7; color: #15803d; }
-    .badge-mismatch { background: #fee2e2; color: #b91c1c; }
-    .badge-no-docs  { background: #fef9c3; color: #92400e; }
-    .badge-error    { background: #ffedd5; color: #c2410c; }
-    .badge-loading  { background: #e0f2fe; color: #0369a1; }
+    .badge-pending  { background: #242420; color: #a0a09a; }
+    .badge-ok       { background: #0d2a12; color: #2ecc71; }
+    .badge-mismatch { background: #2a0d0d; color: #e74c3c; }
+    .badge-no-docs  { background: #2a2200; color: #f1c40f; }
+    .badge-error    { background: #2a1500; color: #e67e22; }
+    .badge-loading  { background: #1a2420; color: #7ecbba; }
 
     /* ── Compare button ── */
     .compare-btn {
       background: none;
-      border: 1px solid #2563eb;
-      color: #2563eb;
+      border: 1px solid var(--accent);
+      color: var(--accent);
       padding: .3rem .75rem;
       border-radius: 5px;
       font-size: .8rem;
@@ -111,8 +133,8 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .compare-btn:hover { background: #eff6ff; }
-    .compare-btn:disabled { opacity: .45; cursor: default; }
+    .compare-btn:hover { background: #2e2214; color: var(--accent-hover); }
+    .compare-btn:disabled { opacity: .35; cursor: default; }
 
     /* ── Result detail panel ── */
     .detail-panel {
@@ -121,7 +143,7 @@
       display: none;
     }
     .detail-panel.open { display: block; }
-    .detail-panel .error-msg { color: #b91c1c; margin-bottom: .4rem; }
+    .detail-panel .error-msg { color: #f08080; margin-bottom: .4rem; }
 
     .link-group { margin-top: .6rem; }
     .link-group-label {
@@ -129,37 +151,54 @@
       font-size: .75rem;
       text-transform: uppercase;
       letter-spacing: .05em;
+      color: var(--text-muted);
       margin-bottom: .3rem;
     }
     .link-list { list-style: none; display: flex; flex-direction: column; gap: .2rem; }
     .link-list li { display: flex; align-items: baseline; gap: .5rem; }
-    .link-list li a { color: #2563eb; word-break: break-all; }
-    .link-list li a:hover { text-decoration: underline; }
-    .dot-ok      { color: #16a34a; font-size: 1rem; line-height: 1; }
-    .dot-missing { color: #dc2626; font-size: 1rem; line-height: 1; }
-    .dot-extra   { color: #d97706; font-size: 1rem; line-height: 1; }
+    .link-list li a { color: var(--link); word-break: break-all; }
+    .link-list li a:hover { text-decoration: underline; color: var(--accent-hover); }
+    .dot-ok      { color: #2ecc71; font-size: 1rem; line-height: 1; }
+    .dot-missing { color: #e74c3c; font-size: 1rem; line-height: 1; }
+    .dot-extra   { color: #f1c40f; font-size: 1rem; line-height: 1; }
 
-    .no-docs-note { color: #92400e; font-style: italic; }
+    .no-docs-note { color: #f1c40f; font-style: italic; }
+
+    /* ── Subsection header row ── */
+    tr.subsection-row td {
+      background: var(--bg-thead);
+      color: var(--text-muted);
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding: .35rem 1rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-light);
+    }
 
     /* ── Global progress bar ── */
     #progress-bar-wrap {
       display: none;
-      background: #fff;
+      background: var(--bg-card);
       border-radius: 8px;
-      border: 1px solid #dde1e7;
+      border: 1px solid var(--border);
       padding: .75rem 1.25rem;
       font-size: .875rem;
-      color: #334155;
+      color: var(--text-muted);
     }
-    #progress-bar-wrap progress { width: 100%; margin-top: .4rem; accent-color: #2563eb; }
+    #progress-bar-wrap progress { width: 100%; margin-top: .4rem; accent-color: var(--accent); }
   </style>
 </head>
 <body>
 
 <header>
-  <div>
-    <h1>Link Scout</h1>
-    <p>Comparing HTS Poly live product pages to micro-site QR pages (.pdf / .doc links only)</p>
+  <div class="header-left">
+    <img src="/static/hts-logo.svg" alt="HTS Logo" class="header-logo" />
+    <div>
+      <h1>Link Scout</h1>
+      <p>Comparing HTS Poly live product pages to micro-site QR pages (.pdf / .doc links only)</p>
+    </div>
   </div>
   <button id="compare-all-btn" onclick="compareAll()">Compare All</button>
 </header>
@@ -185,9 +224,15 @@
         </tr>
       </thead>
       <tbody>
+        {% set ns = namespace(prev_sub=None) %}
         {% for product in products[section] %}
         {% set slug = product.live.split('/product/')[-1] %}
         {% set rowid = slug | replace('/', '-') %}
+        {% set sub = product.subsection | default('') %}
+        {% if sub and sub != ns.prev_sub %}
+        <tr class="subsection-row"><td colspan="5">{{ sub }}</td></tr>
+        {% set ns.prev_sub = sub %}
+        {% endif %}
         <tr id="row-{{ rowid }}">
           <td><strong>{{ product.name }}</strong></td>
           <td><a href="{{ product.live }}" target="_blank">htspoly.com/product/{{ slug }}</a></td>
@@ -251,20 +296,25 @@
         const inMicro  = result.matched.includes(l.href);
         const icon     = inMicro ? '<span class="dot-ok">●</span>' : '<span class="dot-missing">●</span>';
         const tip      = inMicro ? 'Present on micro site' : 'Missing from micro site';
-        const filename = l.href.split('/').pop().split('?')[0];
-        html += `<li>${icon} <a href="${esc(l.href)}" target="_blank" title="${tip}">${esc(filename)}</a>
-                     <span style="color:#94a3b8;font-size:.75rem">${esc(l.text)}</span></li>`;
+        const filename = decodeURIComponent(l.href.split('/').pop().split('?')[0]);
+        const label    = l.title || l.text || filename;
+        html += `<li>${icon} <span title="${tip}">${esc(label)}</span>
+                     <a href="${esc(l.href)}" target="_blank" style="color:#94a3b8;font-size:.75rem">${esc(filename)}</a></li>`;
       });
       html += `</ul></div>`;
     }
 
     if (result.extra_on_micro.length) {
+      const microMap = Object.fromEntries(result.micro_links.map(l => [l.href, l]));
       html += `<div class="link-group">
-        <div class="link-group-label" style="color:#d97706">Extra on micro site (not on live)</div>
+        <div class="link-group-label" style="color:#f1c40f">Extra on micro site (not on live)</div>
         <ul class="link-list">`;
       result.extra_on_micro.forEach(href => {
-        const filename = href.split('/').pop().split('?')[0];
-        html += `<li><span class="dot-extra">●</span> <a href="${esc(href)}" target="_blank">${esc(filename)}</a></li>`;
+        const l        = microMap[href] || {};
+        const filename = decodeURIComponent(href.split('/').pop().split('?')[0]);
+        const label    = l.title || l.text || filename;
+        html += `<li><span class="dot-extra">●</span> <span>${esc(label)}</span>
+                     <a href="${esc(href)}" target="_blank" style="color:#94a3b8;font-size:.75rem">${esc(filename)}</a></li>`;
       });
       html += `</ul></div>`;
     }
